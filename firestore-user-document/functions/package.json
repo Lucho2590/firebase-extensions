@@ -29,8 +29,5 @@
         "mocha": "^10.2.0",
         "ts-node": "^10.4.0"
     },
-    "engines": {
-        "node": "20"
-    },
     "private": true
 }
