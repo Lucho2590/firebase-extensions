@@ -1,4 +1,4 @@
-name: firestore-user-document-v4
+name: firestore-user-document-v5
 version: 0.0.7
 specVersion: v1beta
 displayName: Firestore User Document
@@ -50,7 +50,7 @@ resources:
       eventTrigger:
         eventType: providers/firebase.auth/eventTypes/user.create
         resource: projects/${PROJECT_ID}
-      runtime: "nodejs22"
+      runtime: "nodejs20"
 
   - name: deleteUserDocument
     type: firebaseextensions.v1beta.function
@@ -63,7 +63,7 @@ resources:
       eventTrigger:
         eventType: providers/firebase.auth/eventTypes/user.delete
         resource: projects/${PROJECT_ID}
-      runtime: "nodejs22"
+      runtime: "nodejs20"
 
   - name: backfillExistingUsers
     type: firebaseextensions.v1beta.function
@@ -74,6 +74,7 @@ resources:
     properties:
       location: ${param:LOCATION}
       taskQueueTrigger: {}
+      runtime: "nodejs20"
 
 params:
   - param: USERS_COLLECTION_PATH
